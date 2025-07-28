@@ -2,6 +2,7 @@ package com.collectionpractice.arraylist;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class MergeTwoListRemoveDublicate {
 
@@ -21,9 +22,15 @@ public class MergeTwoListRemoveDublicate {
         mergeList.addAll(list2);
 
         System.out.println("Merge the two list: "+mergeList);
+        System.out.println("\nremove duplicate without ordered way");
 
         HashSet<Integer>set = new HashSet<>(mergeList);
-        System.out.println("Remove the dublicate: "+set);
+        System.out.println("Remove the duplicate: "+set);
+        System.out.println("\nremove duplicate in ordered way: ");
+
+        LinkedHashSet<Integer> linked = new LinkedHashSet<>(mergeList);
+        System.out.println("ordered way: "+linked);
+
 
     }
 }

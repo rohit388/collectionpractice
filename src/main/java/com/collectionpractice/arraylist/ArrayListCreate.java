@@ -2,7 +2,7 @@ package com.collectionpractice.arraylist;
 
 import java.util.ArrayList;
 
-public class AddNumbers {
+public class ArrayListCreate {
 
     public static void main(String[] args){
 
