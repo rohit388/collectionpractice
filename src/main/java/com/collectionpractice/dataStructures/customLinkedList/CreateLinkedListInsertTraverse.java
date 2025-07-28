@@ -1,58 +1,89 @@
 package com.collectionpractice.dataStructures.customLinkedList;
+import java.util.Scanner;
 
 class Node{
     int data;
     Node next;
-
     Node(int data){
         this.data = data;
         this.next = null;
     }
-
 }
+
 class CustomLinkedList{
-
-    Node head;// start for the list
-
-    void insert(int data) {
+    Node head;//start with head
+    public void insert(int data){
 
         Node newNode = new Node(data);
-        // check if list is empty
-        if (head == null) {
+        if(head==null){
             head = newNode;
             return;
         }
-
         Node temp = head;
-
-        while (temp.next != null) {
+        while(temp.next!=null){
             temp = temp.next;
         }
         temp.next = newNode;
-
-
     }
-    void display() {
+    void insertAtBeginning(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    void insertAtEnd(int data){
+        Node newNode = new Node(data);
+        if(head==null){
+            head = newNode;
+            return;
+        }
         Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " → ");
+        while(temp.next!=null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+
+    public void display(){
+        Node temp = head;
+        while(temp!=null){
+            System.out.print(temp.data+"->");
             temp = temp.next;
         }
         System.out.println("null");
     }
-
-
 }
+
 
 public class CreateLinkedListInsertTraverse {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size linkedList : ");
+        int element = sc.nextInt();
+
+        System.out.println("Now enter the values: ");
         CustomLinkedList list = new CustomLinkedList();
+        int values = 0;
+        for(int i=1;i<=element;i++){
+             values = sc.nextInt();
+            list.insert(values);
+        }
 
-        list.insert(10);
-        list.insert(20);
-        list.insert(30);
-        list.insert(40);
+        System.out.println("Before inserting at beginning:");
+        list.display();
 
+        System.out.println("Insert the value for the beginning position: ");
+        values = sc.nextInt();
+        list.insertAtBeginning(values);
+
+        System.out.println("After inserting at beginning:");
+        list.display();
+
+        System.out.println("Insert the value for the End position: ");
+        values = sc.nextInt();
+        list.insertAtEnd(values);
+
+        System.out.println("After inserting at End:");
         list.display();
     }
 }
