@@ -1,22 +1,12 @@
 package com.collectionpractice.dataStructures.customLinkedList;
 
-import java.util.Scanner;
-
-class Node1 {
-    int data;
-    Node1 next;
-
-    Node1(int data){
-        this.data = data;
-        this.next = null;
-    }
-}
+import com.collectionpractice.dataStructures.customLinkedList.saperateNode.Node;
 
 class LinkedListPosition{
-    Node1 head;
+    Node head;
 
     void insertAtAnyPosition(int data,int position){
-       Node1 newNode = new Node1(data); //yeha pe ek new node hai jisko add krna head ke sath
+       Node newNode = new Node(data); //yeha pe ek new node hai jisko add krna head ke sath
 
         //Case 1:Insert at beginning (for empty , non empty)
         if(head==null || position==1){
@@ -25,7 +15,7 @@ class LinkedListPosition{
             return;
         }
 
-        Node1 temp = head;
+        Node temp = head;
         int count = 1;
         while(temp!=null && count < position-1){
             temp = temp.next;
@@ -40,7 +30,7 @@ class LinkedListPosition{
         //Case 2:
     }
     void display(){
-        Node1 temp = head;
+        Node temp = head;
         while(temp!=null){
             System.out.print(temp.data+"->");
             temp=temp.next;

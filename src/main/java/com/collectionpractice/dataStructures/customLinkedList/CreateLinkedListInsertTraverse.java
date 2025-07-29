@@ -1,43 +1,36 @@
 package com.collectionpractice.dataStructures.customLinkedList;
+import com.collectionpractice.dataStructures.customLinkedList.saperateNode.Node;
+
 import java.util.Scanner;
 
-class Node{
-    int data;
-    Node1 next;
-    Node(int data){
-        this.data = data;
-        this.next = null;
-    }
-}
-
 class CustomLinkedList{
-    Node1 head; //start with head
+    Node head; //start with head
     public void insert(int data){
 
-        Node1 newNode = new Node1(data);
+        Node newNode = new Node(data);
         if(head==null){
             head = newNode;
             return;
         }
-        Node1 temp = head;
+        Node temp = head;
         while(temp.next!=null){
             temp = temp.next;
         }
         temp.next = newNode;
     }
     void insertAtBeginning(int data){
-        Node1 newNode = new Node1(data);
+        Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
 
     void insertAtEnd(int data){
-        Node1 newNode = new Node1(data);
+        Node newNode = new Node(data);
         if(head==null){
             head = newNode;
             return;
         }
-        Node1 temp = head;
+        Node temp = head;
         while(temp.next!=null){
             temp = temp.next;
         }
@@ -45,7 +38,7 @@ class CustomLinkedList{
     }
 
     public void display(){
-        Node1 temp = head;
+        Node temp = head;
         while(temp!=null){
             System.out.print(temp.data+"->");
             temp = temp.next;
@@ -63,7 +56,7 @@ public class CreateLinkedListInsertTraverse {
 
         System.out.println("Now enter the values: ");
         CustomLinkedList list = new CustomLinkedList();
-        int values = 0;
+        int values;
         for(int i=1;i<=element;i++){
              values = sc.nextInt();
             list.insert(values);
