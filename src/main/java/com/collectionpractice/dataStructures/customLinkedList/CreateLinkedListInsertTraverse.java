@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class Node{
     int data;
-    Node next;
+    Node1 next;
     Node(int data){
         this.data = data;
         this.next = null;
@@ -11,33 +11,33 @@ class Node{
 }
 
 class CustomLinkedList{
-    Node head;//start with head
+    Node1 head; //start with head
     public void insert(int data){
 
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if(head==null){
             head = newNode;
             return;
         }
-        Node temp = head;
+        Node1 temp = head;
         while(temp.next!=null){
             temp = temp.next;
         }
         temp.next = newNode;
     }
     void insertAtBeginning(int data){
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         newNode.next = head;
         head = newNode;
     }
 
     void insertAtEnd(int data){
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if(head==null){
             head = newNode;
             return;
         }
-        Node temp = head;
+        Node1 temp = head;
         while(temp.next!=null){
             temp = temp.next;
         }
@@ -45,7 +45,7 @@ class CustomLinkedList{
     }
 
     public void display(){
-        Node temp = head;
+        Node1 temp = head;
         while(temp!=null){
             System.out.print(temp.data+"->");
             temp = temp.next;
